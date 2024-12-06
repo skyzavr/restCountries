@@ -1,0 +1,25 @@
+:root[color-scheme='dark'] {
+  --mainOne: #1c1f21;
+  --mainTwo: #222e37;
+  --mainThree: #2b3740;
+  --textOne: #fafafa;
+  --textTwo: #fafafa;
+  --textThree: #fafafa;
+  --textAdditional: #8a8a8a;
+  --primary: #476de8;
+  --shadowMain: 0px 1px 6.9px rgb(0 0 0/22%);
+  --shadowCard: 0px 4px 18.8px -6px rgb(0 0 0/4%);
+}
+
+:root[color-scheme='light'] {
+  --mainOne: #fff;
+  --mainTwo: #fafafa;
+  --mainThree: #fff;
+  --textOne: #36363f;
+  --textTwo: #292929;
+  --textThree: #0b0d0c;
+  --textAdditional: #4f4f4f;
+  --primary: #476de8;
+  --shadowMain: 0px 1px 6.9px rgb(0 0 0/22%);
+  --shadowCard: 0px 4px 18.8px 3px rgb(0 0 0/4%);
+}

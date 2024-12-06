@@ -1,0 +1,12 @@
+:root {
+  --headerBig: 500 30px/34px 'Ubuntu', sans-serif;
+  --headerSmall: 700 16px/18px 'Ubuntu', sans-serif;
+  --cardHeaderBig: 700 24px/30px 'Inter', sans-serif;
+  --cardHeaderSmall: 700 18px/22px 'Inter', sans-serif;
+  --cardHeader: 700 18px/22px 'Inter', sans-serif;
+  --bodyRegular: 400 18px/22px 'Inter', sans-serif;
+  --textRegular: 500 16px/20px 'Inter', sans-serif;
+  --textMedium: 400 16px/20px 'Inter', sans-serif;
+  --textSmallRegular: 500 14px/18px 'Inter', sans-serif;
+  --textSmallMedium: 400 14px/18px 'Inter', sans-serif;
+}
