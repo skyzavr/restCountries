@@ -1,0 +1,25 @@
+.themeWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.switchIcon:hover path {
+  stroke: var(--primary);
+  cursor: pointer;
+}
+
+@media (min-width: 320px) {
+  .title {
+    display: none;
+  }
+}
+
+@media (min-width: 420px) {
+  .title {
+    display: flex;
+    margin-left: 10px;
+    font: var(--bodyRegular);
+    color: var(--textOne);
+  }
+}
