@@ -20,7 +20,7 @@ export const Select = (props: SelectProps) => {
   const selectRef = useRef<HTMLDivElement>(null);
 
   const onSetSelect = ({ id, name, value }: listItem) => {
-    setMenu(value);
+    setMenu(name);
     onUpdate({ id, name, value });
   };
 
