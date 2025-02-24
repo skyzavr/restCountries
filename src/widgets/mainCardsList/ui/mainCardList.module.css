@@ -4,4 +4,5 @@
   gap: 30px 40px;
   grid-template-columns: repeat(auto-fit, 280px);
   justify-content: center;
+  margin: 40px auto 0;
 }
