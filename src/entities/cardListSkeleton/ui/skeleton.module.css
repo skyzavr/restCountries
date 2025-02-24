@@ -1,0 +1,74 @@
+.wrapper {
+  max-width: 1360px;
+  display: grid;
+  gap: 30px 40px;
+  grid-template-columns: repeat(auto-fit, 280px);
+  justify-content: center;
+  margin: 40px auto 0;
+}
+
+.cardWrapper {
+  height: 340px;
+  width: 278px;
+  background-color: var(--mainOne);
+  border-radius: 4px;
+  border: 1px solid var(--mainTwo);
+}
+
+.flag {
+  width: 278px;
+  height: 185px;
+  border-radius: 4px;
+  background-color: var(--textAdditional);
+}
+
+.info {
+  padding: 10px;
+}
+
+.countryName {
+  height: 22px;
+  width: 250px;
+  background: var(--textThree);
+  border-radius: 4px;
+}
+
+.infoWrapper {
+  margin-top: 10px;
+}
+
+.infoWrapper > div:not(:last-child) {
+  margin: 10px 0;
+}
+
+.infoItem {
+  height: 22px;
+  width: 250px;
+  background: var(--mainTwo);
+  border-radius: 4px;
+}
+
+/* animation */
+@keyframes reflect {
+  to {
+    left: calc(100% + 100px);
+  }
+}
+
+.countryName,
+.infoItem {
+  overflow: hidden;
+  position: relative;
+}
+
+.countryName::after,
+.infoItem::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 300px;
+  left: -300px;
+  top: 0;
+  background: linear-gradient(to right, transparent, #8a8a8a, transparent);
+  animation: reflect 3s ease-out infinite;
+}
