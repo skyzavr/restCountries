@@ -12,7 +12,7 @@ export const CountryCard = ({ data }: cardProps) => {
   const infoList = [
     { key: 'Population', value: Number(population).toLocaleString() },
     { key: 'Region', value: convertListToStr(continents) },
-    { key: 'Capital', value: convertListToStr(capital) },
+    { key: 'Capital', value: capital },
   ];
 
   return (
