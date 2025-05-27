@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mainOne);
+  border-radius: 4px;
+  max-width: 280px;
+  border: 1px solid var(--mainTwo);
+  transition: border 0.3s ease-in-out;
+}
+
+.wrapper:hover {
+  cursor: pointer;
+  border: 1px solid var(--textOne);
+  transition: border 0.3s ease-in-out;
+}
+
+.flag > img {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+.info {
+  padding: 30px 24px;
+}
+
+.countryName {
+  font: var(--cardHeader);
+  color: var(--textThree);
+}
+
+.infoWrapper {
+  margin-top: 10px;
+}
+
+.listTitle {
+  font: var(--textRegular);
+  color: var(--textThree);
+}
+
+.listValue {
+  font: var(--textMedium);
+  color: var(--textAdditional);
+  margin-left: 10px;
+}

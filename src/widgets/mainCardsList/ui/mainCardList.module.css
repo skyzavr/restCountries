@@ -1,0 +1,12 @@
+.wrapper {
+  max-width: 1360px;
+  display: grid;
+  gap: 30px 40px;
+  grid-template-columns: repeat(auto-fit, 280px);
+  justify-content: center;
+  margin: 40px auto 0;
+}
+
+.info {
+  color: var(--textOne);
+}

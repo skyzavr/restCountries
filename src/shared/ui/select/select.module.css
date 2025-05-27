@@ -1,0 +1,45 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--mainOne);
+  color: var(--textTwo);
+  border-radius: 4px;
+  box-shadow: 0 1px 6.9px rgba(0 0 0/6%);
+  padding: 20px 30px;
+  width: 210px;
+  font-family: var(--textRegular);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.menu:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 6.9px rgba(0 0 0/30%);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.close {
+  rotate: 180deg;
+}
+
+.select {
+  margin-top: 20px;
+  position: absolute;
+  z-index: 1;
+  list-style: none;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: var(--mainOne);
+  box-shadow: 0 1px 6.9px rgba(0 0 0 / 22%);
+  color: var(--textTwo);
+  font-size: 20px;
+  border-radius: 4px;
+  width: 210px;
+  line-height: 1.38;
+}
+
+.select > li:hover {
+  cursor: pointer;
+  color: var(--primary);
+}
