@@ -9,4 +9,5 @@ export type Country = {
   population: number;
   continents: string[];
   flags: typeEnumeration;
+  region: string;
 };
