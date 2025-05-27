@@ -1,18 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { RefObject, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { appDispatch, RootState } from '@app/store/store';
+import { ObservedElement } from '@features/observedElement';
 import { CountryCard } from '@entities/countryCard';
 import { CardListError } from '@entities/cardListError';
 import { CardListSkeleton } from '@entities/cardListSkeleton';
-import { useObserver } from '@shared/lib/useObserver';
 
 import { fetchCountries } from '../model/slice';
-import { countriesPerPage, options } from '../model/data';
+import { countriesPerPage } from '../model/data';
 import css from './mainCardList.module.css';
 
 export const MainCardList = () => {
-  const [node, isIntersecting] = useObserver(options);
   const [cardsNumber, setCardsNumber] = useState(countriesPerPage);
   const dispatch = useDispatch<appDispatch>();
 
@@ -34,26 +33,27 @@ export const MainCardList = () => {
     return Math.min(countriesPerPage, listLength - cardsNumber);
   };
 
+  const onUpdateCardsList = () =>
+    setCardsNumber((prev) => prev + calcNewCountries());
+
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     data();
   }, [data]);
-
-  useEffect(() => {
-    if (!isIntersecting) return;
-    setCardsNumber((prev) => prev + calcNewCountries());
-  }, [isIntersecting]);
 
   if (status === 'loading') return <CardListSkeleton />;
   if (status === 'failed') return <CardListError error={error} />;
 
   return (
     <div className={css.wrapper}>
+      {countries.length == 0 && (
+        <p className={css.info}>No such countries, huh!</p>
+      )}
       {countries.slice(0, cardsNumber).map((country, ind) =>
         ind === cardsNumber - 1 ? (
-          <div ref={node as RefObject<HTMLDivElement>} key={ind}>
+          <ObservedElement key={ind} onRunCallback={onUpdateCardsList}>
             <CountryCard data={country} />
-          </div>
+          </ObservedElement>
         ) : (
           <CountryCard data={country} key={ind} />
         )
