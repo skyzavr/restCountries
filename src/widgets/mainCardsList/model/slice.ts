@@ -18,14 +18,20 @@ const getFullPath = ({ query, filter }: fetchParams) => {
 export const fetchCountries = createAsyncThunk(
   'countries/fetchCountries',
   async (params: fetchParams, { rejectWithValue, fulfillWithValue }) => {
-    const url = getFullPath({ ...params });
+    const { query, filter } = params;
+    const url = getFullPath({ query, filter });
 
     try {
       const response = await fetch(url);
       if (!response.ok) return rejectWithValue(response.status);
 
       const data = (await response.json()) as Country[];
-      return fulfillWithValue(data);
+
+      if (filter === 'all') return fulfillWithValue(data);
+
+      return fulfillWithValue(
+        data.filter((el) => el.region.toLowerCase() === filter)
+      );
     } catch (error) {
       throw rejectWithValue('There is some problem with data');
     }
