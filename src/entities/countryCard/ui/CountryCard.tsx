@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { convertListToStr } from '@shared/lib/stringHelpers';
 import { Country } from '../model/types';
 
@@ -16,7 +18,7 @@ export const CountryCard = ({ data }: cardProps) => {
   ];
 
   return (
-    <div className={css.wrapper}>
+    <Link to={`/country/${name.common}`} state={data} className={css.wrapper}>
       <div className={css.flag}>
         <img src={svg} alt={alt} />
       </div>
@@ -31,6 +33,6 @@ export const CountryCard = ({ data }: cardProps) => {
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
