@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { convertListToStr } from '@shared/lib/stringHelpers';
-import { Country } from '../model/types';
+import { Country } from '@shared/model/type';
 
 import css from './countryCard.module.css';
 
