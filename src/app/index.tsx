@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 
 import { NotFound } from '@pages/NotFound';
 import { HomePage } from '@pages/home';
+import { Country } from '@pages/country';
 
 import { ThemeProvider } from '@features/theme/lib/ThemeProvider';
 
@@ -16,6 +17,7 @@ export const App = () => {
       children: [
         { path: '/', element: <HomePage /> },
         { path: '*', element: <NotFound /> },
+        { path: '/country/:id', element: <Country /> },
       ],
     },
   ]);
