@@ -1,0 +1,13 @@
+.countryDetails {
+  margin-bottom: 20px;
+}
+
+.countryDetails > p {
+  margin-bottom: 20px;
+  font: var(--cardHeaderBig);
+  color: var(--textThree);
+}
+
+.details > div {
+  margin-bottom: 5px;
+}
