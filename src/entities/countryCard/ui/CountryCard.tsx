@@ -8,12 +8,12 @@ import css from './countryCard.module.css';
 type cardProps = { data: Country };
 
 export const CountryCard = ({ data }: cardProps) => {
-  const { name, capital, population, continents, flags } = data;
+  const { name, capital, population, region, flags } = data;
   const { svg, alt } = flags;
 
   const infoList = [
     { key: 'Population', value: Number(population).toLocaleString() },
-    { key: 'Region', value: convertListToStr(continents) },
+    { key: 'Region', value: convertListToStr(region) },
     { key: 'Capital', value: capital },
   ];
 
