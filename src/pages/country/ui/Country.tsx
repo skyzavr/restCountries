@@ -6,6 +6,8 @@ import { appDispatch, RootState } from '@app/store/store';
 
 import { CountryCard } from '@widgets/countryCard';
 import { CountryHeader } from '@widgets/countryHeader';
+import { ErrorNote } from '@entities/ErrorNote';
+import { LinkButton } from '@shared/ui';
 
 import { fetchCountryByQuery } from '../model/slice';
 
@@ -29,9 +31,18 @@ export const Country = () => {
     fetchData();
   }, [fetchData]);
 
-  if (status === 'loading') return <div> Please wait, we are searching</div>;
+  if (status === 'loading')
+    return (
+      <div className={css.loadingWrapper}>
+        <div className={css.loader}></div>Please wait, we are searching
+      </div>
+    );
   if (status === 'failed')
-    return <div> Looks like some error happened: {error}</div>;
+    return (
+      <ErrorNote error={error}>
+        <LinkButton title="Go home" to="/" />
+      </ErrorNote>
+    );
 
   return (
     <section className={css.wrapper}>

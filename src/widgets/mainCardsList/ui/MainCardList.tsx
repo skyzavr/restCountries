@@ -4,8 +4,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { appDispatch, RootState } from '@app/store/store';
 import { ObservedElement } from '@features/observedElement';
 import { CountryCard } from '@entities/countryCard';
-import { CardListError } from '@entities/cardListError';
+
 import { CardListSkeleton } from '@entities/cardListSkeleton';
+import { ErrorNote } from '@entities/ErrorNote';
 
 import { Country } from '@shared/model/type';
 import { fetchCountries } from '../model/slice';
@@ -44,7 +45,7 @@ export const MainCardList = () => {
   }, [data]);
 
   if (status === 'loading') return <CardListSkeleton />;
-  if (status === 'failed') return <CardListError error={error} />;
+  if (status === 'failed') return <ErrorNote error={error} />;
 
   return (
     <div className={css.wrapper}>
