@@ -1,0 +1,15 @@
+.detailsRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  color: var(--textThree);
+  font: var(--textRegular);
+  margin-right: 10px;
+}
+
+.data {
+  color: var(--textAdditional);
+  font: var(--bodyRegular);
+}
