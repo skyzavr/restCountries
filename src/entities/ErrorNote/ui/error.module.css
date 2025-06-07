@@ -1,0 +1,33 @@
+.messageWrapper {
+  max-width: 940px;
+}
+
+.linkWrapper {
+  display: flex;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.error {
+  line-height: 1.38;
+  background-color: var(--mainOne);
+  color: var(--textOne);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.error > p {
+  font-weight: 600;
+}
+
+@media (min-width: 300px) {
+  .messageWrapper {
+    margin: 10px;
+  }
+}
+
+@media (min-width: 960px) {
+  .messageWrapper {
+    margin: 10px auto 0;
+  }
+}
