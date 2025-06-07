@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+import { regions } from '@features/mainPageFilter/model/data';
+import { baseUrl, fields } from '@shared/model/apiData';
 import { fetchParams, initState, Country } from './types';
-import { baseUrl } from './data';
 
 const initialState: initState = {
   countries: [],
@@ -11,8 +12,14 @@ const initialState: initState = {
 
 const getFullPath = ({ query, filter }: fetchParams) => {
   if (query.trim() !== '') return `${baseUrl}/name/${query}`;
-  if (filter === 'all') return `${baseUrl}/all`;
-  return `${baseUrl}/region/${filter}`;
+
+  const queryString = filter === 'all' ? '/all/' : `/region/${filter}`;
+  return `${baseUrl}${queryString}?${fields}`;
+};
+
+const filteredListByRegion = (list: Country[], region: regions) => {
+  if (region.toLowerCase() === 'all') return list;
+  return list.filter((el) => el.region.toLowerCase() === region.toLowerCase());
 };
 
 export const fetchCountries = createAsyncThunk(
@@ -27,11 +34,7 @@ export const fetchCountries = createAsyncThunk(
 
       const data = (await response.json()) as Country[];
 
-      if (filter === 'all') return fulfillWithValue(data);
-
-      return fulfillWithValue(
-        data.filter((el) => el.region.toLowerCase() === filter)
-      );
+      return fulfillWithValue(filteredListByRegion(data, filter));
     } catch (error) {
       throw rejectWithValue('There is some problem with data');
     }

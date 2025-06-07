@@ -1,6 +1,6 @@
 import { regions } from '@features/mainPageFilter/model/data';
-import { Country } from '@entities/countryCard/model/types';
-export { type Country } from '@entities/countryCard/model/types';
+import { Country } from '@shared/model/type';
+export { type Country } from '@shared/model/type';
 
 export type initState = {
   countries: Country[];

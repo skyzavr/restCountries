@@ -1,22 +1,24 @@
+import { Link } from 'react-router-dom';
+
 import { convertListToStr } from '@shared/lib/stringHelpers';
-import { Country } from '../model/types';
+import { Country } from '@shared/model/type';
 
 import css from './countryCard.module.css';
 
 type cardProps = { data: Country };
 
 export const CountryCard = ({ data }: cardProps) => {
-  const { name, capital, population, continents, flags } = data;
+  const { name, capital, population, region, flags } = data;
   const { svg, alt } = flags;
 
   const infoList = [
     { key: 'Population', value: Number(population).toLocaleString() },
-    { key: 'Region', value: convertListToStr(continents) },
+    { key: 'Region', value: convertListToStr(region) },
     { key: 'Capital', value: capital },
   ];
 
   return (
-    <div className={css.wrapper}>
+    <Link to={`/country/${name.common}`} state={data} className={css.wrapper}>
       <div className={css.flag}>
         <img src={svg} alt={alt} />
       </div>
@@ -31,6 +33,6 @@ export const CountryCard = ({ data }: cardProps) => {
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

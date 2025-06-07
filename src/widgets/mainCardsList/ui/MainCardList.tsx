@@ -7,8 +7,10 @@ import { CountryCard } from '@entities/countryCard';
 import { CardListError } from '@entities/cardListError';
 import { CardListSkeleton } from '@entities/cardListSkeleton';
 
+import { Country } from '@shared/model/type';
 import { fetchCountries } from '../model/slice';
 import { countriesPerPage } from '../model/data';
+
 import css from './mainCardList.module.css';
 
 export const MainCardList = () => {
@@ -49,7 +51,7 @@ export const MainCardList = () => {
       {countries.length == 0 && (
         <p className={css.info}>No such countries, huh!</p>
       )}
-      {countries.slice(0, cardsNumber).map((country, ind) =>
+      {countries.slice(0, cardsNumber).map((country: Country, ind: number) =>
         ind === cardsNumber - 1 ? (
           <ObservedElement key={ind} onRunCallback={onUpdateCardsList}>
             <CountryCard data={country} />
