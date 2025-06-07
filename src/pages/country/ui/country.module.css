@@ -9,9 +9,47 @@
   margin: 0 20px;
 }
 
+.loadingWrapper {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  line-height: 1.38;
+  background-color: var(--mainOne);
+  color: var(--primary);
+  padding: 20px;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.loader {
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: var(--primary) var(--mainOne);
+  animation: loader 1.5s infinite;
+  margin-right: 10px;
+}
+
+@keyframes loader {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
 @media (min-width: 300px) {
   .wrapper {
     align-items: stretch;
+  }
+
+  .loadingWrapper {
+    margin: 10px;
+  }
+}
+
+@media (min-width: 520px) {
+  .loadingWrapper {
+    margin: 10px auto;
   }
 }
 
