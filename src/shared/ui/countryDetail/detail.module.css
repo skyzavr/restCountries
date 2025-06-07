@@ -1,15 +1,34 @@
 .detailsRow {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
 }
 
 .title {
   color: var(--textThree);
-  font: var(--textRegular);
   margin-right: 10px;
 }
 
 .data {
   color: var(--textAdditional);
-  font: var(--bodyRegular);
+}
+
+@media (min-width: 300px) {
+  .title {
+    font: var(--textSmallRegular);
+  }
+
+  .data {
+    font: var(--textSmallMedium);
+  }
+}
+
+@media (min-width: 720px) {
+  .title {
+    font: var(--textRegular);
+  }
+
+  .data {
+    font: var(--bodyRegular);
+  }
 }
