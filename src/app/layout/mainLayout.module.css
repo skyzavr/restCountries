@@ -1,0 +1,4 @@
+.wrapper {
+  background: var(--mainTwo);
+  flex-grow: 1;
+}

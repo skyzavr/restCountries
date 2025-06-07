@@ -5,6 +5,8 @@ import '@shared/style/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <App />
+    </div>
   </React.StrictMode>
 );
