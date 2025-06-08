@@ -3,3 +3,4 @@ export { LinkButton } from './button/Link';
 export { Select } from './select/Select';
 export { Search } from './search/Search';
 export { Detail } from './countryDetail/Detail';
+export { Scroll } from './scrollBtn/ScrollBtn';
