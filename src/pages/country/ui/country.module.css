@@ -1,5 +1,5 @@
 .wrapper {
-  max-width: 1360px;
+  max-width: 1230px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -50,11 +50,5 @@
 @media (min-width: 520px) {
   .loadingWrapper {
     margin: 10px auto;
-  }
-}
-
-@media (min-width: 720px) {
-  .wrapper {
-    align-items: center;
   }
 }
