@@ -3,7 +3,7 @@
 ## Links
 
 <a href="https://github.com/skyzavr/restCountries"> Repo </a> |
-<a href="rest-countries-nine-ebon.vercel.app"> Live </a>
+<a href="https://rest-countries-nine-ebon.vercel.app"> Live </a>
 
 
 ## User can:
